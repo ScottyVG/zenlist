@@ -23,5 +23,21 @@
     "chai": "^3.5.0",
     "mocha": "^3.1.1",
     "supertest": "^2.0.0"
-  }
+  },
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottyVG/zenlist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScottyVG/zenlist/issues"
+  },
+  "homepage": "https://github.com/ScottyVG/zenlist#readme"
 }
