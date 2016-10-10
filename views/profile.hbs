@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="page-header text-center">
+    <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="well">
+        <h3><span class="fa fa-user"></span>Local</h3>
+        <table class="table table-bordered table-striped">
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        {{#if user}}
+          <tr>
+            <td>{{user.email}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+          </tr>
+        {{/if}}
+      </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
