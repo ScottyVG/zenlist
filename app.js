@@ -1,20 +1,17 @@
-'use strict';
-
+'use strict'
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('cookie-session');
+var passconfig = require('./config/passport');
+var passport = require('passport');
+var flash = require('connect-flash');
+var Sessions = require('sessions');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var lists = require('./routes/lists');
-var login = require('./routes/login');
-var logout = require('./routes/logout');
-var tasks = require('./routes/tasks');
-var signup = require('./routes/signup');
-
+// var config = require('./config/passport');
 
 var app = express();
 
@@ -27,24 +24,28 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+    extended: true
 }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser('ilovescotchscotchyscotchscotch'));
+
+// passport set up
+app.use(session({secret:'ilovescotchscotchyscotchscotch'})); //sesion secret (will need to be changed)
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+var routes = require('./routes/index');
+
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/lists', lists);
-app.use('/login', login);
-app.use('/logout', logout);
-app.use('/tasks', tasks);
-app.use('/signup', signup);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -52,23 +53,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 
