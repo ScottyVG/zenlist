@@ -2,12 +2,11 @@
 
 var express = require('express');
 var router = express.Router();
-
+var knex = require('../db/knex');
+var User = require('../middleware/auth');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {
-    title: 'Zen List App - TASKS'
-  });
+router.post('/', User.isLoggedIn, function(req, res, next) {
+  User.createTasks(req,res);
 });
 
 module.exports = router;

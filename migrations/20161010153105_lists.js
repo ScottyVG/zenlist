@@ -17,8 +17,10 @@ exports.up = function(knex) {
       .inTable('users')
       .onDelete('CASCADE')
       .index();
-    table.integer('lat');
-    table.integer('lng');
+    table.integer('lat')
+      .defaultTo(1);;
+    table.integer('lng')
+      .defaultTo(1);;
     table.timestamps(true, true);
   })
 };

@@ -50,8 +50,87 @@ function createUser(req, res) {
         });
 }
 
+function createLists(req,res){
+  var newList = {
+    title:req.body.title,
+    description:req.body.description,
+    priorityLevel:req.body.priorityLevel,
+    user_id:req.user.id
+
+  }
+  knex('lists')
+    .insert(newList,'*')
+    .then((list)=>{
+      console.log('the crearted list',list);
+      res.redirect('/users')
+    })
+    .catch((err)=>{
+      return err;
+    })
+}
+
+function createTasks(req,res){
+  knex('lists')
+    .where({'title':req.body.title,'user_id':req.user.id})
+    .first()
+    .then((list)=>{
+      console.log('list',list);
+      var newTask = {
+        task:req.body.task,
+        user_id:list.user_id,
+        list_id:list.id
+      }
+      // if(!list){
+      //   return next(err)
+      // }
+      console.log(newTask);
+       knex('tasks')
+       .insert(newTask,'*')
+       .then(()=>{
+         res.redirect('/users')
+       })
+    })
+    .catch((err)=>{
+      return err;
+    })
+}
+
+function editLists(req,res){
+  console.log(req.body);
+knex('lists')
+  .where({'title':req.body.titleToEdit,'user_id':req.user.id})
+  .first()
+  .then((list)=>{
+    console.log(list);
+    // delete req.body.titleToEdit;
+    var {title,description,priorityLevel} = req.body;
+    var editedList={};
+
+    if(title){
+      editedList.title = req.body.title
+    }
+    if(description){
+      editedList.description = req.body.description
+    }
+    if(priorityLeve){
+      editedList.priorityLevel = req.body.priorityLevel
+    }
+    return knex('lists')
+    .update(editedList,'*')
+    .where({'title':req.body.titleToEdit,'user_id':req.user.id})
+    .then(()=>{
+      res.redirect('/user')
+    })
+  })
+  .catch((err)=>{
+    return err
+  })
+}
 module.exports = {
     validPassword,
     createUser,
-    isLoggedIn
+    isLoggedIn,
+    createLists,
+    createTasks,
+    editLists
 };

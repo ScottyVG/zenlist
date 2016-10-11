@@ -13,7 +13,6 @@ exports.up = function(knex) {
       .onDelete('CASCADE')
       .index();
     table.integer('list_id')
-      .notNullable()
       .references('id')
       .inTable('lists')
       .onDelete('CASCADE')
