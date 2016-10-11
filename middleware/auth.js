@@ -1,4 +1,5 @@
 'use strict'
+
 var bcrypt = require('bcrypt');
 var knex = require('../db/knex');
 var humps = require('humps');
@@ -32,6 +33,7 @@ function createUser(req, res) {
                 return knex('users')
                     .insert((newUser), '*');
             }
+            return next(err)
         })
         .then((rows) => {
           if(!rows){
@@ -40,7 +42,7 @@ function createUser(req, res) {
             console.log('createUsers row', rows);
             var nUser = rows[0];
             req.login(nUser,function(){
-                return res.redirect('/profile');
+                return res.redirect('/users');
             })
         })
         .catch((err) => {

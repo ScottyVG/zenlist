@@ -3,7 +3,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('tasks', (table) => {
     table.increments();
-    table.text('task', 255)
+    table.string('task', 255)
       .notNullable()
       .defaultTo('');
     table.integer('user_id')
@@ -18,7 +18,6 @@ exports.up = function(knex) {
       .inTable('lists')
       .onDelete('CASCADE')
       .index();
-    table.text('description', 10000);
     table.timestamps(true, true);
   })
 };
