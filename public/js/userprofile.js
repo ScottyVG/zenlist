@@ -6,12 +6,12 @@
         const $lists = $('#lists');
 
         for (const list of lists) {
-          const $anchor = $('<a>')
-            .attr({
-              href: `/users.hbs?id=${list.user_id}`,
-              'data-delay': '50',
-              'data-tooltip': fav.title
-            })
+          // const $anchor = $('<a>')
+          //   .attr({
+          //     href: `/users.hbs?id=${list.user_id}`,
+          //     'data-delay': '50',
+          //     'data-tooltip': fav.title
+          //   })
             .tooltip();
 
           const $col = $('<div>').addClass('col-md-12');
@@ -23,10 +23,10 @@
           // src: fav.coverUrl,
           //   alt: fav.title
           // });
-
-          $cardImage.append($img);
-          $anchor.append($cardImage);
-          $card.append($anchor);
+          //
+          // $cardImage.append($img);
+          // $anchor.append($cardImage);
+          // $card.append($anchor);
           $col.append($card);
           $favs.append($col);
         }
