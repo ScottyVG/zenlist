@@ -9,7 +9,7 @@ function validPassword(password, dbPassword) {
 }
 
 function isLoggedIn(req, res, next) {
-<<<<<<< HEAD
+
     if (req.isAuthenticated()) {
         return next();
     }
@@ -390,7 +390,7 @@ function editLists(req, res) {
     .catch((err) => {
       return err
     })
->>>>>>> 3351c1a5dcf891f8c3df10b1a0bba37733dafa5c
+
 }
 ************************************
 knex('tasks')
@@ -401,7 +401,7 @@ knex('tasks')
 })
 */
 module.exports = {
-<<<<<<< HEAD
+
     validPassword,
     createUser,
     isLoggedIn,
@@ -411,12 +411,5 @@ module.exports = {
     renderUser,
     testforjoin
     // getLists
-=======
-  validPassword,
-  createUser,
-  isLoggedIn,
-  createLists,
-  createTasks,
-  editLists
->>>>>>> 3351c1a5dcf891f8c3df10b1a0bba37733dafa5c
+
 };
