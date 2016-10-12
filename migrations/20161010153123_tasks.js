@@ -3,6 +3,9 @@
 exports.up = function(knex) {
   return knex.schema.createTable('tasks', (table) => {
     table.increments();
+    table.string('title')
+      .notNullable()
+      .defaultTo('');
     table.string('task', 255)
       .notNullable()
       .defaultTo('');

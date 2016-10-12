@@ -29,7 +29,7 @@ passport.serializeUser((user, done) => {
             done(null, users);
         })
         .catch((err) => {
-            done(null, false)
+            done(null, false);
         });
 });
 passport.deserializeUser((user, done) => {
