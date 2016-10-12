@@ -9,7 +9,6 @@ var User = require('../middleware/auth');
 //
 // });
 router.get('/',User.isLoggedIn,function(req,res,next){
-
 })
 
 router.post('/',User.isLoggedIn,function(req, res, next){
