@@ -1,178 +1,213 @@
-<div class="container">
-    <div class="center-align">
-        <h1><span class=""></span> Profile Page Proto</h1>
-        <a href="/logout" class="btn">Logout</a>
-    </div>
+  <header class="site-header">
+    <div class="row header-wrap">
+  		<div class="col-sm-5 header-box">
+  <div class="col-sm-2 header-box logo-box text-center">
+    <a href=""><img src="img/logo.png" width="200" alt=""></a>
+  </div><!-- .header-box -->
 
-    <div class="row">
-        <div class="col offset-s2 s8">
-            <div class="center-align">
-                <h3><span class=""></span>Local user proto</h3>
-                <table class="striped centerd responsive-table">
-                    <th>Email</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    {{#if user}}
-                        <tr>
-                            <td>{{user.email}}</td>
-                            <td>{{user.firstName}}</td>
-                            <td>{{user.lastName}}</td>
-                        </tr>
-                    {{/if}}
-                </table>
+    <main>
+        <!--Main layout-->
+        <div class="container">
+
+            <!--Page heading-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive">{{{USER}}} PROFILE
+                      <br>
+                        <small class="text-muted">Create your Checklists!</small>
+                    </h1>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<hr>
-
-<div class="container">
-    <div class="" id="list">
-        <!-- {{#each lists}}
+            <!--/.Page heading-->
             <hr>
-            <h3><span class=""></span>{{this.title}}</h3>
-            <div class="" id="{{this.id}}">
-                <table class="striped centerd responsive-table">
-                    <th>
-                        description
-                    </th>
-                    <th>
-                        priorityLevel
-                    </th>
-                    {{#if this}}
-                        <tr>
 
-                            <td>
-                                {{this.description}}
-                            </td>
-                            <td>
-                                {{this.priorityLevel}}
-                            </td>
-                        </tr>
-                         {{#if tasks}}
-                        {{#each tasks}}
-                            <div class="" id="{{this.id}}">
-                                <h2>{{./this.title}}</h2>
-                                <table>
-                                    <th>
+            <!--First column-->
+            <div class="col-md-12">
+                <!--Card-->
+                <div class="card">
 
-                                    </th>
-                                </table>
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <div class="row">
+                            <div class="col-md-8">
+                            <h4 class="card-title">GSchool</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p></div>
+                            <div class="col-md-4">
+                            <h4 class="priority_title">Priority: HIGH</h4>
                             </div>
-                            {{/each}}
-                        <!-- {{/if}}
-                    {{/if}}
-                </table>
-            </div>
-            <hr>
-        {{/each}} -->
-    </div>
-</div>
+                          </div>
+                          <hr>
 
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th></th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <fieldset class="form-group">
+                                            <input type="checkbox" id="checkbox1">
+                                            <label for="checkbox1"></label>
+                                        </fieldset>
+                                    </td>
+                                    <td>Ashley</td>
+                                    <td>Lynwood</td>
+                                    <td>@ashow</td>
+                                    <td>
+                                        <a class="blue-text"><i class="fa fa-user"></i></a>
+                                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                                        <a class="red-text"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <fieldset class="form-group">
+                                            <input type="checkbox" id="checkbox2">
+                                            <label for="checkbox2"></label>
+                                        </fieldset>
+                                    </td>
+                                    <td>Billy</td>
+                                    <td>Cullen</td>
+                                    <td>@cullby</td>
+                                    <td>
+                                        <a class="blue-text"><i class="fa fa-user"></i></a>
+                                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                                        <a class="red-text"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <fieldset class="form-group">
+                                            <input type="checkbox" id="checkbox3">
+                                            <label for="checkbox3"></label>
+                                        </fieldset>
+                                    </td>
+                                    <td>Ariel</td>
+                                    <td>Macy</td>
+                                    <td>@arielsea</td>
+                                    <td>
+                                        <a class="blue-text"><i class="fa fa-user"></i></a>
+                                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                                        <a class="red-text"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
 
-
-
-
-
-
-
-
-
-<hr>
-<div class="container">
-    <div class="center-align">
-        <h3>create lists proto</h3>
-    </div>
-    <div class="row">
-        <div class="col s6">
-            <div class="row input-field">
-                <form class="input-field" action="/lists" method="post">
-                    <div class="input-field col s12">
-                        <input placeholder="" id="title" type="text" name="title" class="form-control">
-                        <label for="title">title</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <textarea name="description" id="description" class="materialize-textarea"></textarea>
-                        <label for="description">description</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <p class="range-field">
-                            <input name="priorityLevel" type="range" id="priorityLevel" min="1" max="5" />
-                        </p>
-                    </div>
-                    <!-- <div class=""> -->
-                    <button type="submit" class="btn">Create list</button>
+                            </tbody>
+                        </table>
+                        <div class="read-more">
+                            <a href="#!" class="btn btn-primary">Delete List</a>
+                        </div>
                     <!-- </div> -->
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-<div class="container">
-    <div class="center-align">
-        <div class="row input-field">
-            <form class="" action="/tasks" method="post">
-                <div class="input-field col s12">
-                    <input placeholder="" id="" type="text" name="titletolist" class="form-control">
-                    <label for="title">titleoflist</label>
+                    <!--/.Card content-->
+
                 </div>
-                <div class="input-field col s12">
-                    <input placeholder="" id="" type="text" name="title" class="form-control">
-                    <label for="title">titleoftasktoedit</label>
-                </div>
-                <div class="input-field col s12">
-                    <textarea name="task" id="" class="materialize-textarea"></textarea>
-                    <label for="description">task</label>
-                </div>
-                <button type="submit" class="btn">Create task</button>
-            </form>
-        </div>
-    </div>
-</div>
-<hr>
-<div class="container">
-    <div class="center-align">
-        <h3>edit lists proto</h3>
-    </div>
-    <div class="row">
-        <div class="col s6">
-            <div class="row input-field">
-                <form class="input-field" action="/lists/edit" method="post">
-                    <div class="input-field col s12">
-                        <input placeholder="" id="" type="text" name="titleToEdit" class="form-control">
-                        <label for="titleToEdit">titleToEdit</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="" id="" type="text" name="title" class="form-control">
-                        <label for="title">title</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <textarea name="description" id="" class="materialize-textarea"></textarea>
-                        <label for="description">description</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <p class="range-field">
-                            <input name="priorityLevel" type="range" id="" min="1" max="5" />
-                        </p>
-                    </div>
-                    <!-- <div class=""> -->
-                    <button type="submit" class="btn">edit list</button>
-                    <!-- </div> -->
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
+                <!--/.Card-->
 
-<div>
-  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-<div id="map" style="width:500px;height:500px"></div>
+                <!--First column-->
+                <div class="col-md-12">
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <!-- <div class="card-block"> -->
+                            <!--Title-->
+                            <div class="row">
+                                <div class="col-md-8">
+                                <h4 class="card-title">GSchool</h4>
+                                <!--Text-->
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p></div>
+                                <div class="col-md-4">
+                                <h4 class="priority_title">Priority: HIGH</h4>
+                                </div>
+                              </div>
+                              <hr>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th></th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>
+                                            <fieldset class="form-group">
+                                                <input type="checkbox" id="checkbox1">
+                                                <label for="checkbox1"></label>
+                                            </fieldset>
+                                        </td>
+                                        <td>Ashley</td>
+                                        <td>Lynwood</td>
+                                        <td>@ashow</td>
+                                        <td>
+                                            <a class="blue-text"><i class="fa fa-user"></i></a>
+                                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                                            <a class="red-text"><i class="fa fa-times"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>
+                                            <fieldset class="form-group">
+                                                <input type="checkbox" id="checkbox2">
+                                                <label for="checkbox2"></label>
+                                            </fieldset>
+                                        </td>
+                                        <td>Billy</td>
+                                        <td>Cullen</td>
+                                        <td>@cullby</td>
+                                        <td>
+                                            <a class="blue-text"><i class="fa fa-user"></i></a>
+                                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                                            <a class="red-text"><i class="fa fa-times"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>
+                                            <fieldset class="form-group">
+                                                <input type="checkbox" id="checkbox3">
+                                                <label for="checkbox3"></label>
+                                            </fieldset>
+                                        </td>
+                                        <td>Ariel</td>
+                                        <td>Macy</td>
+                                        <td>@arielsea</td>
+                                        <td>
+                                            <a class="blue-text"><i class="fa fa-user"></i></a>
+                                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                                            <a class="red-text"><i class="fa fa-times"></i></a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="read-more">
+                                <a href="#!" class="btn btn-primary">Delete List</a>
+                            </div>
+                        <!-- </div> -->
+                        <!--/.Card content-->
 
 
 
-  </div>
-  <a class="waves-effect waves-light btn" id="map_button">button</a>
-  <div id="position">
-</div>
+
+
+        <!--/.Main layout-->
