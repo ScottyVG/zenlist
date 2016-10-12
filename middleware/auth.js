@@ -51,6 +51,10 @@ function createUser(req, res) {
 }
 
 function createLists(req,res){
+
+$.get("https://maps.googleapis.com/maps/api/js?key=AIzaSyDIgnCf09gcOnTUVjMdIzw2M3EA1NRmXio&libraries=places&callback=initAutocomplete")
+
+
   var newList = {
     title:req.body.title,
     description:req.body.description,

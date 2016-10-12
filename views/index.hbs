@@ -1,148 +1,327 @@
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Zen List</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/login">Log In</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-      </ul>
+<div class="preloader"><span></span></div><!-- .preloader -->
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-<!-- parralax banner -->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <div class="center-align">
-      <h1><span class="fa fa-lock"></span>Welcome to Zen List</h1>
-      <p>
-        Here is text for our introduction.
-        Here is text for our introduction.
-        Here is text for our introduction.
-        Here is text for our introduction.
-        Here is text for our introduction.
-        Here is text for our introduction.
-      </p>
-      <a href="/login" class="btn btn-default center-align"><span class="fa fa-user"></span> Log In </a>
-      <a href="/signup" class="btn btn-default center-align"><span class="fa fa-user"></span> Sign Up </a>
-    </div>
-        <br><br>
+<div class="background">
+  <div class="layer background-image page-bg-4"></div>
 
-      </div>
-    </div>
-    <div class="parallax"><img src="parralax.jpg" alt="Unsplashed background img 1"></div>
+  <div class="layer background-overlay page-overlay-4"></div>
+</div><!-- .background -->
+
+<header class="site-header">
+  <div class="row header-wrap">
+		<div class="col-sm-5 header-box">
+			<div id="main-menu" class="main-menu">
+				<ul>
+					<li>
+						<a href="#about">
+							<span class="hidden-xs hidden-sm">
+								<i class="hover-label">About</i>
+								About
+							</span>
+							</span>
+						</a>
+					</li><!--
+					--><li><a href="#signup">
+							<span class="hidden-xs hidden-sm">
+								<i class="hover-label">Sign Up</i>
+								Sign Up
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- .header-box -->
+
+		<div class="col-sm-2 header-box logo-box text-center">
+			<a href=""><img src="img/logo.png" width="200" alt=""></a>
+		</div><!-- .header-box -->
+
+		<div class="col-sm-5 header-box text-right hidden-xs">
+			<!-- demonstration - http://keith-wood.name/countdownRef.html -->
+      <div id="main-menu" class="main-menu">
+        <ul>
+          <li>
+            <a href="#login">
+              <span class="hidden-xs hidden-sm">
+                <i class="hover-label">Log In</i>
+                Log In
+            </a>
+          </li>
+        </ul>
+		</div><!-- .header-box -->
   </div>
+</header><!-- .site-header -->
+
+<div class="main">
+  <section id="home" class="section active">
+		<div class="section-wrap">
+			<div class="section-content">
+				<div class="container">
+					<div class="text-center">
+						<div class="clearfix"></div>
+						<h2 class="h2-section-title"
+							data-animation="fadeInDown"
+							data-out-animation="fadeOutUp"
+							data-out-animation-delay="300">Create Checklists With Ease</h2>
+
+						<div class="row section-description">
+							<div class="col-sm-8 col-sm-offset-2">
+								<p class="lead"
+									data-animation="fadeInDown"
+									data-animation-delay="300"
+									data-out-animation="fadeOutUp"
+									data-out-animation-delay="300">Where creating checklists is made easy!<br>Keep track of your "to-dos" in an organized fashion and track your list's location</p>
+							</div>
+						</div>
 
 
-  <div class="container">
-    <div class="section">
+						<a href="#"
+							class="btn btn-default"
+							data-hover="Sign Up Now"
+							data-animation="fadeInDown"
+							data-animation-delay="600"
+							data-out-animation="fadeOutUp"
+							data-out-animation-delay="600"
+							data-toggle="modal"
+							data-target="#signup"><span class="button-label">Sign Up Now</span></a>
+					</div>
+				</div>
+			</div><!-- .section-content -->
+		</div><!-- .section-wrap -->
+  </section><!-- #home.section -->
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">FEATURE 1</h5>
+  <section id="about" class="section">
+		<div class="section-wrap">
+			<div class="section-content">
+				<div class="container">
+					<h2 class="text-center section-title title-with-link"
+						data-animation="fadeInDown"
+						data-animation-delay="100"
+						data-out-animation="fadeOutUp"
+						data-out-animation-delay="100">
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
+						<a href="#team" class="go-section">
+							Team
+							<span class="arrow">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 15" enable-background="new 0 0 28 15" xml:space="preserve" width="28" height="15">
+									<path fill="#666666" d="M17,0l11,7v1L17,1L17,0z M17,15l0-1l11-7v1L17,15L17,15z M0,8V7l28,0v1H0L0,8z"/>
+								</svg>
+							</span>
+						</a>
+					</h2>
+
+					<div class="row section-description text-center">
+						<div class="col-sm-12 col-md-10 col-md-offset-1">
+							<p class="lead"
+								data-animation="fadeInDown"
+								data-animation-delay="100"
+								data-out-animation="fadeOutUp"
+								data-out-animation-delay="100">Here is a paragraph a little more about what Zen List Does. Here is a paragraph a little more about what Zen List Does. Here is a paragraph a little more about what Zen List Does. Here is a paragraph a little more about what Zen List Does.</p>
+						</div>
+					</div>
+
+					<div class="carousel-box">
+						<div class="carousel">
+							<div class="item" data-animation="fadeInUp" data-animation-delay="100" data-out-animation="fadeOutDown" data-out-animation-delay="100">
+								<div class="features-box">
+									<div class="icon">
+										<img src="img/svg/features-1.png" width="90" height="90" alt="">
+									</div>
+									<a href="#" class="btn btn-sm btn-block btn-inverse" data-hover="Read More"><span class="button-label">Checklists</span></a>
+								</div><!-- .features-box -->
+							</div>
+
+							<div class="item" data-animation="fadeInUp" data-animation-delay="200" data-out-animation="fadeOutDown" data-out-animation-delay="200">
+								<div class="features-box">
+									<div class="icon">
+										<img src="img/svg/features-2.png" width="90" height="90" alt="">
+									</div>
+									<a href="#" class="btn btn-sm btn-block btn-inverse" data-hover="Read More"><span class="button-label">Geolocation</span></a>
+								</div><!-- .features-box -->
+							</div>
+
+							<div class="item" data-animation="fadeInUp" data-animation-delay="300" data-out-animation="fadeOutDown" data-out-animation-delay="300">
+								<div class="features-box">
+									<div class="icon">
+										<img src="img/svg/features-3.png" width="90" height="90" alt="">
+									</div>
+									<a href="#" class="btn btn-sm btn-block btn-inverse" data-hover="Read More"><span class="button-label">User Login</span></a>
+								</div><!-- .features-box -->
+							</div>
+						</div><!-- .carousel -->
+
+						<div class="carousel-controls">
+							<a href="#" class="nav-item prev">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 11" enable-background="new 0 0 10 11" xml:space="preserve" width="10" height="11">
+									<path fill="#111111" d="M10,6H0V5h10V6L10,6z M0,6V5l5-5l1,0L0,6z M5,11L0,6V5l6,6L5,11z"/>
+								</svg>
+							</a>
+							<a href="#" class="nav-item next">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 11" enable-background="new 0 0 10 11" xml:space="preserve" width="10" height="11">
+									<path fill="#111111" d="M0,6V5h10v1H0L0,6z M4,0h1l5,5v1L4,0z M4,11l6-6v1l-5,5L4,11z"/>
+								</svg>
+							</a>
+						</div>
+					</div><!-- .carousel-box -->
+				</div>
+			</div><!-- .section-content -->
+		</div><!-- .section-wrap -->
+  </section><!-- #about.section -->
+
+  <section id="team" class="section">
+		<div class="section-wrap">
+			<div class="section-content">
+				<div class="container">
+					<h2 class="text-center section-title title-with-link"
+						data-animation="fadeInDown"
+						data-animation-delay="100"
+						data-out-animation="fadeOutUp"
+						data-out-animation-delay="900">
+						Team
+						<a href="#about" class="go-section">
+							About
+							<span class="arrow">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 15" enable-background="new 0 0 28 15" xml:space="preserve" width="28" height="15">
+									<path fill="#666666" d="M17,0l11,7v1L17,1L17,0z M17,15l0-1l11-7v1L17,15L17,15z M0,8V7l28,0v1H0L0,8z"/>
+								</svg>
+							</span>
+						</a>
+					</h2>
+
+					<div class="carousel-box">
+						<div class="carousel">
+							<div class="item" data-animation="fadeInUp" data-animation-delay="100" data-out-animation="fadeOutDown" data-out-animation-delay="100">
+								<div class="person-box">
+									<div class="image">
+										<img src="content/img/team-1.png" class="img-circle replace-2x" width="150" height="150" alt="">
+									</div>
+									<h4 class="title">Zack Dillie</h4>
+									<div class="post">Title Here</div>
+								</div><!-- .person-box -->
+							</div>
+
+							<div class="item" data-animation="fadeInUp" data-animation-delay="200" data-out-animation="fadeOutDown" data-out-animation-delay="200">
+								<div class="person-box">
+									<div class="image">
+										<img src="content/img/team-2.png" class="img-circle replace-2x" width="150" height="150" alt="">
+									</div>
+									<h4 class="title">Scott VG</h4>
+									<div class="post">Title Here</div>
+								</div><!-- .person-box -->
+							</div>
+
+							<div class="item" data-animation="fadeInUp" data-animation-delay="300" data-out-animation="fadeOutDown" data-out-animation-delay="300">
+								<div class="person-box">
+									<div class="image">
+										<img src="content/img/team-3.png" class="img-circle replace-2x" width="150" height="150" alt="">
+									</div>
+									<h4 class="title">Courtney Sanders</h4>
+									<div class="post">Title Here</div>
+								</div><!-- .person-box -->
+							</div>
+
+							<div class="item" data-animation="fadeInUp" data-animation-delay="400" data-out-animation="fadeOutDown" data-out-animation-delay="400">
+								<div class="person-box">
+									<div class="image">
+										<img src="content/img/team-4.png" class="img-circle replace-2x" width="150" height="150" alt="">
+									</div>
+									<h4 class="title">Kelsey Chapman</h4>
+									<div class="post">Title Here</div>
+								</div><!-- .person-box -->
+							</div>
+						</div><!-- .carousel -->
+
+						<div class="carousel-controls">
+							<a href="#" class="nav-item prev">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 11" enable-background="new 0 0 10 11" xml:space="preserve" width="10" height="11">
+									<path fill="#111111" d="M10,6H0V5h10V6L10,6z M0,6V5l5-5l1,0L0,6z M5,11L0,6V5l6,6L5,11z"/>
+								</svg>
+							</a>
+							<a href="#" class="nav-item next">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 11" enable-background="new 0 0 10 11" xml:space="preserve" width="10" height="11">
+									<path fill="#111111" d="M0,6V5h10v1H0L0,6z M4,0h1l5,5v1L4,0z M4,11l6-6v1l-5,5L4,11z"/>
+								</svg>
+							</a>
+						</div>
+					</div><!-- .carousel-box -->
+				</div>
+			</div><!-- .section-content -->
+		</div><!-- .section-wrap -->
+  </section><!-- #team.section -->
+
+  <section id="signup" class="section">
+		<div class="section-wrap">
+			<div class="section-content">
+				<div class="container">
+					<div class="contact-wrap relative">
+						<div class="row">
+							<div class="col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+								<h2 class="text-center section-title"
+									data-animation="fadeInDown"
+									data-animation-delay="900"
+									data-out-animation="fadeOutUp"
+									data-out-animation-delay="100">Sign Up</h2>
+
+                  <form action="/signup" method="post">
+                    <div class="form-group">
+                      <label for="">First Name</label>
+                      <input type="text" class="form-control" name="firstName" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Last Name</label>
+                      <input type="text" class="form-control" name="lastName" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Email</label>
+                      <input type="text" class="form-control" name="email" value="">
+                    </div>
+                    <div class="for-group">
+                      <label for="">Password</label>
+                      <input type="password" class="form-control" name="password" value="">
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+                  </form>
+
+							</div>
+						</div>
+
+						<div class="clearfix"></div>
+					</div><!-- .contact-wrap -->
+				</div>
+			</div><!-- .section-content -->
+		</div><!-- .section-wrap -->
+  </section><!-- #signup.section -->
+
+  <section id="login" class="section">
+    <div class="section-wrap">
+      <div class="section-content">
+        <div class="container">
+          <div class="contact-wrap relative">
+            <div class="row">
+              <div class="col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <h2 class="text-center section-title"
+                  data-animation="fadeInDown"
+                  data-animation-delay="900"
+                  data-out-animation="fadeOutUp"
+                  data-out-animation-delay="100">Log In</h2>
+
+                  <form action="/login" method="post">
+                    <div class="form-group">
+                      <label for="">Email</label>
+                      <input type="text" class="form-control" name="email" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Password</label>
+                      <input type="password" class="form-control" name="password" value="">
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                  </form>
+
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+          </div><!-- .contact-wrap -->
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">FEATURE 2</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">FEATURE 3</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Keep Track of your personal checklists to keep track of your LIFE</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="https://placeit.net/uploads/stage/wide_image/2111/default_watermarked_7557basewide.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="center-align">
-    <h1><span class="fa fa-lock"></span>Start Today!</h1>
-    <a href="/signup" class="btn btn-default center-align"><span class="fa fa-user"></span> Sign Up </a>
-  </div>
-    </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Zen List</h5>
-          <p class="grey-text text-lighten-4">We are a team of Galvanize students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <!-- <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div> -->
-        <!-- <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div> -->
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
+      </div><!-- .section-content -->
+    </div><!-- .section-wrap -->
+  </section><!-- #signup.section -->
+</div><!-- .main -->
