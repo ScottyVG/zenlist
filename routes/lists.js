@@ -8,7 +8,7 @@ var User = require('../middleware/auth');
 // router.get('/', function(req, res, next) {
 //
 // });
-router.get('/',User.isLoggedIn,function(req,res,next){
+router.get('/:id',User.isLoggedIn,function(req,res,next){
 
 })
 

@@ -11,7 +11,7 @@ router.get('/', User.isLoggedIn, function(req, res, next) {
       // resolve()
     // })
 User.testforjoin(req,res);
-User.renderUser(req,res);
+// console.log('stuff and things',User.renderUserObj(req,res));
 
     // console.log('profile', req.user);
     // res.render('users', {
