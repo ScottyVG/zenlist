@@ -25,7 +25,7 @@ var User = require('../middleware/auth');
           User.createUser(req,res);
         })
         .catch((err)=>{
-          res.redirect('/signup');
+          res.redirect('/#signup');
         })
     });
 
