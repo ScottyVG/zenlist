@@ -1,213 +1,57 @@
-  <header class="site-header">
+<div class="preloader"><span></span></div>
+<header class="site-header">
     <div class="row header-wrap">
-  		<div class="col-sm-5 header-box">
-  <div class="col-sm-2 header-box logo-box text-center">
-    <a href=""><img src="img/logo.png" width="200" alt=""></a>
-  </div><!-- .header-box -->
+        <div class="col-sm-5 header-box">
+            <div class="col-sm-2 header-box logo-box text-center">
+                <a href=""><img src="img/logo.png" width="200" alt=""></a>
+            </div>
+            <!-- .header-box -->
 
-    <main>
-        <!--Main layout-->
-        <div class="container">
-
-            <!--Page heading-->
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="h1-responsive">{{{USER}}} PROFILE
+            <main>
+                <!--Main layout-->
+                <div class="container">
+                    <!--Page heading-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="h1-responsive">{{{user.firstName}}} PROFILE
                       <br>
                         <small class="text-muted">Create your Checklists!</small>
                     </h1>
-                </div>
-            </div>
-            <!--/.Page heading-->
-            <hr>
-
-            <!--First column-->
-            <div class="col-md-12">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <div class="row">
-                            <div class="col-md-8">
-                            <h4 class="card-title">GSchool</h4>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p></div>
-                            <div class="col-md-4">
-                            <h4 class="priority_title">Priority: HIGH</h4>
-                            </div>
-                          </div>
-                          <hr>
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th></th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>
-                                        <fieldset class="form-group">
-                                            <input type="checkbox" id="checkbox1">
-                                            <label for="checkbox1"></label>
-                                        </fieldset>
-                                    </td>
-                                    <td>Ashley</td>
-                                    <td>Lynwood</td>
-                                    <td>@ashow</td>
-                                    <td>
-                                        <a class="blue-text"><i class="fa fa-user"></i></a>
-                                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
-                                        <a class="red-text"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>
-                                        <fieldset class="form-group">
-                                            <input type="checkbox" id="checkbox2">
-                                            <label for="checkbox2"></label>
-                                        </fieldset>
-                                    </td>
-                                    <td>Billy</td>
-                                    <td>Cullen</td>
-                                    <td>@cullby</td>
-                                    <td>
-                                        <a class="blue-text"><i class="fa fa-user"></i></a>
-                                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
-                                        <a class="red-text"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>
-                                        <fieldset class="form-group">
-                                            <input type="checkbox" id="checkbox3">
-                                            <label for="checkbox3"></label>
-                                        </fieldset>
-                                    </td>
-                                    <td>Ariel</td>
-                                    <td>Macy</td>
-                                    <td>@arielsea</td>
-                                    <td>
-                                        <a class="blue-text"><i class="fa fa-user"></i></a>
-                                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
-                                        <a class="red-text"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                        <div class="read-more">
-                            <a href="#!" class="btn btn-primary">Delete List</a>
                         </div>
-                    <!-- </div> -->
-                    <!--/.Card content-->
+                    </div>
+                    <!--/.Page heading-->
+                    <a href="/lists" class="btn btn-default" data-hover="Sign Up Now" data-animation="fadeInDown" data-animation-delay="600" data-out-animation="fadeOutUp" data-out-animation-delay="600" data-toggle="modal" data-target=""><span class="button-label">createLists</span></a>
 
-                </div>
-                <!--/.Card-->
 
-                <!--First column-->
-                <div class="col-md-12">
-                    <!--Card-->
-                    <div class="card">
 
-                        <!--Card content-->
-                        <!-- <div class="card-block"> -->
-                            <!--Title-->
-                            <div class="row">
-                                <div class="col-md-8">
-                                <h4 class="card-title">GSchool</h4>
-                                <!--Text-->
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p></div>
-                                <div class="col-md-4">
-                                <h4 class="priority_title">Priority: HIGH</h4>
+                    {{#each userLists}}
+                        <div class="">
+                            <h3>{{this.title}}</h3>
+                            <hr>
+                            <p>
+                                {{this.description}}
+                            </p>
+                            <p>
+                                {{this.priorityLevel}}
+                            </p>
+                            {{#each this.listTasks}}
+                                <hr>
+                                <div class="">
+                                    <p>
+                                        {{this.title}}
+                                    </p>
+                                    <hr>
+                                    <p>
+                                        {{this.task}}
+                                    </p>
                                 </div>
-                              </div>
-                              <hr>
+                                <hr>
+                            {{/each}}
+                        </div>
 
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th></th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Username</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>
-                                            <fieldset class="form-group">
-                                                <input type="checkbox" id="checkbox1">
-                                                <label for="checkbox1"></label>
-                                            </fieldset>
-                                        </td>
-                                        <td>Ashley</td>
-                                        <td>Lynwood</td>
-                                        <td>@ashow</td>
-                                        <td>
-                                            <a class="blue-text"><i class="fa fa-user"></i></a>
-                                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
-                                            <a class="red-text"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>
-                                            <fieldset class="form-group">
-                                                <input type="checkbox" id="checkbox2">
-                                                <label for="checkbox2"></label>
-                                            </fieldset>
-                                        </td>
-                                        <td>Billy</td>
-                                        <td>Cullen</td>
-                                        <td>@cullby</td>
-                                        <td>
-                                            <a class="blue-text"><i class="fa fa-user"></i></a>
-                                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
-                                            <a class="red-text"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>
-                                            <fieldset class="form-group">
-                                                <input type="checkbox" id="checkbox3">
-                                                <label for="checkbox3"></label>
-                                            </fieldset>
-                                        </td>
-                                        <td>Ariel</td>
-                                        <td>Macy</td>
-                                        <td>@arielsea</td>
-                                        <td>
-                                            <a class="blue-text"><i class="fa fa-user"></i></a>
-                                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
-                                            <a class="red-text"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
+                    {{/each}}
+                </div>
 
-                                </tbody>
-                            </table>
-                            <div class="read-more">
-                                <a href="#!" class="btn btn-primary">Delete List</a>
-                            </div>
-                        <!-- </div> -->
-                        <!--/.Card content-->
+                <!--Render Card from Database-->
 
-
-
-
-
-        <!--/.Main layout-->
+                <header>

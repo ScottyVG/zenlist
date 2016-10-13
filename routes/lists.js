@@ -4,16 +4,10 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
 var User = require('../middleware/auth');
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//
-// });
-
-router.get('/:id',User.isLoggedIn,function(req,res,next){
 
 
 router.get('/',User.isLoggedIn,function(req,res,next){
-
+res.render('list')
 })
 
 router.post('/',User.isLoggedIn,function(req, res, next){
