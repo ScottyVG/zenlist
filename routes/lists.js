@@ -7,8 +7,8 @@ var User = require('../middleware/auth');
 /* GET home page. */
 
 
-router.get('/:id',User.isLoggedIn, function(req, res, next) {
-
+router.get('/',User.isLoggedIn, function(req, res, next) {
+res.render('list')
 })
 
 router.post('/',User.isLoggedIn, function(req, res, next) {
@@ -21,5 +21,9 @@ router.post('/edit',User.isLoggedIn, function(req, res, next) {
   User.editLists(req, res);
 })
 
+router.get('/d/:id', User.isLoggedIn, function(req, res, next){
+  console.log('req.body');
+  User.deleteLists(req, res);
+})
 
 module.exports = router;

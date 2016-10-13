@@ -9,13 +9,22 @@ router.get('/:id',User.isLoggedIn, function(req,res,next){
   console.log('get tasks req.body', req.body);
 })
 
-router.post('/', User.isLoggedIn, function(req, res, next) {
-  console.log(req.body);
+// router.post('/', function(req, res, next){
+// res.send('hello');
+// })
+router.post('/:id', User.isLoggedIn, function(req, res, next) {
+  console.log('hello log');
   User.createTasks(req,res);
+  // res.send('hello')
+  // res.send('hello send');
+
 });
 
 router.post('/edit',User.isLoggedIn, function(req, res, next){
-
   User.editTasks(req,res);
+})
+
+router.delete('/d/:id', User.isLoggedIn, function(req, res, next){
+  User.deleteTasks(req, res);
 })
 module.exports = router;

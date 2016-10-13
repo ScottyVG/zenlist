@@ -83,11 +83,14 @@ function createTasks(req, res) {
                     title: req.body.title,
                     task: req.body.task,
                     user_id: list.user_id,
-                    list_id: list.id
+                    list_id: req.params.id
                 }
                 // console.log(newTask);
             knex('tasks')
                 .insert(newTask, '*')
+                // .where({
+                //   list_id: req.params
+                // })
                 .then(() => {
                     res.redirect('/users')
                 })
@@ -279,10 +282,9 @@ function deleteTasks(req, res) {
 }
 
 function deleteLists(req, res) {
-    knex('lists')
-        .where({
-            'id': req.params.id
-        })
+    console.log('delete lists function called');
+    knex('tasks')
+        .where({'id': req.params.id})
         .first()
         .then((list) => {
             if (!list) {
@@ -317,53 +319,57 @@ function testforjoin(req, res) {
     knex('lists')
         .where('lists.user_id', req.user.id)
         .then(lists => {
-                knex('tasks')
-                    .where('tasks.user_id', req.user.id)
-                    .then(tasks => {
-                            lists.forEach(list => {
-                                    list.listTasks = [];
-                                    tasks.forEach(task => {
-                                            if (task.list_id == list.id) {
-                                                list.listTasks.push(task)
-                                            }
-                                        })
-                                        userLists.push(list);
-                                        // console.log('usersLists', userLists);
-                                        // console.log('tasks',list.listTasks);
-                                    })
-
-                                    console.log('userLists',userLists);
-                                    res.render('users',{userLists})
-                            })
+            knex('tasks')
+                .where('tasks.user_id', req.user.id)
+                .then(tasks => {
+                    lists.forEach(list => {
+                        list.listTasks = [];
+                        tasks.forEach(task => {
+                            if (task.list_id == list.id) {
+                                list.listTasks.push(task)
+                            }
+                        })
+                        userLists.push(list);
+                        // console.log('usersLists', userLists);
+                        // console.log('tasks',list.listTasks);
                     })
 
+                    console.log('userLists', userLists);
+                    res.render('users', {
+                        userLists
+                    })
+                })
+        })
 
-            //     knex('lists')
-            //     .innerJoin('tasks','lists.user_id', 'tasks.user_id')
-            //     .where({
-            //       'tasks.user_id': req.user.id,
-            //       'lists.user_id': req.user.id
-            //     })
-            //     .then((tasks) => {
-            //           console.log('testjoin',tasks);
-            //             // console.log(tasks);
-            // // return tasks
-            //         })
-            //         .catch((err) => {
-            //             return err
-            //         })
-        }
 
-    module.exports = {
+    //     knex('lists')
+    //     .innerJoin('tasks','lists.user_id', 'tasks.user_id')
+    //     .where({
+    //       'tasks.user_id': req.user.id,
+    //       'lists.user_id': req.user.id
+    //     })
+    //     .then((tasks) => {
+    //           console.log('testjoin',tasks);
+    //             // console.log(tasks);
+    // // return tasks
+    //         })
+    //         .catch((err) => {
+    //             return err
+    //         })
+}
 
-        validPassword,
-        createUser,
-        isLoggedIn,
-        createLists,
-        createTasks,
-        editLists,
-        renderUserObj,
-        testforjoin
-        // getLists
+module.exports = {
 
-    };
+    validPassword,
+    createUser,
+    isLoggedIn,
+    createLists,
+    createTasks,
+    editLists,
+    renderUserObj,
+    testforjoin,
+    deleteTasks,
+    deleteLists
+    // getLists
+
+};
