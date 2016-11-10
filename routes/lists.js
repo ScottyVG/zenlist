@@ -7,6 +7,7 @@ var User = require('../middleware/auth');
 /* GET home page. */
 
 
+
 router.get('/',User.isLoggedIn, function(req, res, next) {
 res.render('list')
 })
